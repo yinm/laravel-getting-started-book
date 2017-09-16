@@ -1,0 +1,19 @@
+### https://raw.github.com/github/gitignore/f51d32528bcd110bc8fb8b09e2b0164f6c243663/laravel.gitignore
+
+vendor/
+node_modules/
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+bootstrap/cache/
+.env.*.php
+.env.php
+.env
+
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+.rocketeer/
+
+
