@@ -18,18 +18,20 @@
 <body>
   <h1>Blade/Index</h1>
 
-  <p>&#064;loopディレクティブの例</p>
-  @foreach ($data as $item)
-    @if ($loop->first)
-      <p>データ一覧</p><ul>
-    @endif
+  <p>&#064;whileディレクティブの例</p>
+  <ol>
+    @php
+      $counter = 0;
+    @endphp
 
-    <li>No,{{$loop->iteration}}. {{$item}}</li>
+    @while ($counter < count($data))
+      <li>{{$data[$counter]}}</li>
 
-    @if ($loop->last)
-      </ul><p>-------ここまで</p>
-    @endif
-  @endforeach
+      @php
+        $counter++;
+      @endphp
+    @endwhile
+  </ol>
 
   <form method="post" action="/hello">
     {{ csrf_field() }}
