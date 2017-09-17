@@ -11,11 +11,18 @@ class HelloController extends Controller
     {
         $data = [
             'data' => [
-                'one',
-                'two',
-                'three',
-                'four',
-                'five'
+                [
+                    'name' => '山田たろう',
+                    'mail' => 'taro@yamada'
+                ],
+                [
+                    'name' => '田中はなこ',
+                    'mail' => 'hanako@flower'
+                ],
+                [
+                    'name' => '鈴木さちこ',
+                    'mail' => 'sachico@happy'
+                ]
             ]
         ];
         return view('hello.index', $data);
