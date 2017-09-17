@@ -1,42 +1,17 @@
-<html>
-<head>
-  <title>Hello/Index</title>
-  <style>
-    body {
-      font-size: 16pt;
-      color: #999;
-    }
-    h1 {
-      font-size: 50pt;
-      text-align: right;
-      color: #f6f6f6;
-      margin: -20px 0 -30px 0;
-      letter-spacing: -4pt;
-    }
-  </style>
-</head>
-<body>
-  <h1>Blade/Index</h1>
+@extends('layouts.helloapp')
 
-  <p>&#064;whileディレクティブの例</p>
-  <ol>
-    @php
-      $counter = 0;
-    @endphp
+@section('title', 'Index')
 
-    @while ($counter < count($data))
-      <li>{{$data[$counter]}}</li>
+@section('menubar')
+  @parent
+  インデックスページ
+@endsection
 
-      @php
-        $counter++;
-      @endphp
-    @endwhile
-  </ol>
+@section('content')
+  <p>ここが本文のコンテンツです。</p>
+  <p>必要なだけ記述できます。</p>
+@endsection
 
-  <form method="post" action="/hello">
-    {{ csrf_field() }}
-    <input type="text" name="msg">
-    <input type="submit">
-  </form>
-</body>
-</html>
+@section('footer')
+  copyright 2017 tuyano.
+@endsection
