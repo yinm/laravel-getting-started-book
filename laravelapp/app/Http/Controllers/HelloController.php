@@ -7,9 +7,19 @@ use Validator;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('hello.index', ['msg' => 'フォームを入力:']);
+        $validator = Validator::make($request->query(), [
+            'id' => 'required',
+            'pass' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            $msg = 'クエリーに問題があります。';
+        } else {
+            $msg = 'ID/PASSを受け付けました。フォームを入力ください。';
+        }
+        return view('hello.index', ['msg' => $msg]);
     }
 
     public function post(Request $request)
