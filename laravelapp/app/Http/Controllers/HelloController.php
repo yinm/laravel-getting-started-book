@@ -10,15 +10,7 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        if (isset($request->id)) {
-            $params = [
-                'id' => $request->id
-            ];
-            $items = DB::select('select * from people where id = :id', $params);
-        } else {
-            $items = DB::select('select * from people');
-        }
-
+        $items = DB::table('people')->get();
         return view('hello.index', ['items' => $items]);
     }
 
