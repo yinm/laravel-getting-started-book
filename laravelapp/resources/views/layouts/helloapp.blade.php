@@ -36,6 +36,16 @@
       border-bottom: 1px solid #ccc;
       color: #ccc;
     }
+    th {
+      background-color: #999;
+      color: #fff;
+      padding: 5px 10px;
+    }
+    td {
+      border: 1px solid #aaa;
+      color: #999;
+      padding: 5px 10px;
+    }
   </style>
 </head>
 <body>
