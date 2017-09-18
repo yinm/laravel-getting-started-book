@@ -104,7 +104,9 @@ class HelloController extends Controller
         $min = $request->min;
         $max = $request->max;
         $items = DB::table('people')
-                   ->whereRaw('age >= ? and age <= ?', [$min, $max])->get();
+                   ->where('age', '>=', $min)
+                   ->where('age', '<=', $max)
+                   ->get();
 
         return view('hello.show', ['items' => $items]);
     }
