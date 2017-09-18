@@ -101,11 +101,10 @@ class HelloController extends Controller
 
     public function show(Request $request)
     {
-        $min = $request->min;
-        $max = $request->max;
+        $page = $request->page;
         $items = DB::table('people')
-                   ->where('age', '>=', $min)
-                   ->where('age', '<=', $max)
+                   ->offset($page * 3)
+                   ->limit(3)
                    ->get();
 
         return view('hello.show', ['items' => $items]);
