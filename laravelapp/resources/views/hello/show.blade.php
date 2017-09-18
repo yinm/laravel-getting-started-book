@@ -18,6 +18,8 @@
           <td width="50px">{{ $item->name }}</td>
           <th width="50px">mail: </th>
           <td width="50px">{{ $item->mail }}</td>
+          <th width="50px">age: </th>
+          <td width="50px">{{ $item->age }}</td>
         </tr>
       </table>
     @endforeach
