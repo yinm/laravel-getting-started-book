@@ -46,4 +46,21 @@ class HelloController extends Controller
 
         return view('hello.index', ['msg' => '正しく入力されました！']);
     }
+
+    public function add(Request $request)
+    {
+        return view('hello.add');
+    }
+
+    public function create(Request $request)
+    {
+        $params = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+
+        DB::insert('insert into people (name, mail, age) values (:name, :mail, :age)', $params);
+        return redirect('/hello');
+    }
 }
